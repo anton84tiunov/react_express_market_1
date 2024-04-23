@@ -1,0 +1,10 @@
+CREATE DATABASE test_db_ts_node_2;
+
+CREATE USER 'test_user_ts_node_2'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Qwerty123#';
+
+GRANT ALL PRIVILEGES ON test_db_ts_node_2.* TO 'test_user_ts_node_2'@'localhost';
+
+FLUSH PRIVILEGES;
+
+
+mysql -u test_user_ts_node_2 -p 
