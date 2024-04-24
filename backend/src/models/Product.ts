@@ -17,7 +17,7 @@ export class Product{
 
     @ManyToOne(() => User, (user)  => user.product)
     @JoinColumn({ name: "user_id" }) // Имя столбца, в который будет сохранен внешний ключ
-    userr_created: User;
+    user_created: User;
 
     @Column()
     price: number

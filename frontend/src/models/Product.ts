@@ -5,7 +5,7 @@ export interface Product {
     id: number;
     name: string;
     category: ProductCategory;
-    userr_created: User;
+    user_created: User;
     price: number;
     description: string;
     created_at: Date;

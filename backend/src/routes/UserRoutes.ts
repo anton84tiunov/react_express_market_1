@@ -1,5 +1,5 @@
 import express from 'express';
-import { createUser, getAllUsers } from '../controllers/UserController';
+import { checkCredentials, createUser, getAllUsers } from '../controllers/UserController';
 
 const router = express.Router();
 
@@ -10,6 +10,7 @@ router.post('/create', createUser);
 // Маршрут для получения всех пользователей
     router.post('/get_all', getAllUsers);
 
+    router.post('/check_credentials', checkCredentials); // Добавляем новый маршрут для проверки учетных данных
 
 export default router;
 

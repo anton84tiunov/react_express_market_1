@@ -1,5 +1,3 @@
-import { Product } from "./Product";
-import { ProductCategory } from "./ProductCategory";
 
 export interface User {
     id: number;
@@ -8,6 +6,4 @@ export interface User {
     age: number;
     email: string;
     password: string;
-    product_cat: ProductCategory[];
-    product: Product[];
 }

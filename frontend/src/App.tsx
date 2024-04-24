@@ -1,37 +1,18 @@
-// Импортируем  требуемые компоненты из react-router-dom
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-
-// Создаем папку pages в src , а в ней 2 компонента, импортируем их...
-import Home from "./pages/Home";
-import Auth from "./pages/Auth";
-import Products from "./pages/Products";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./containers/Header";
+import Main from "./containers/Main";
+import Footer from "./containers/Footer";
 
 function App() {
-
-
   return (
-  
-    <BrowserRouter>
-      <header>
-        <nav>
-          <h1>Jobarouter</h1>
-          <NavLink to="/auth">About</NavLink>
-          <NavLink to="/home">Home</NavLink>
-          <NavLink to="/products">Products</NavLink>
-
-        </nav>
-       
-      </header>
-      <main>
-        <Routes>
-            <Route path="auth" element={<Auth />} />
-            <Route path="home" element={<Home />} />
-            <Route path="products" element={<Products />} />
-    
-        </Routes>
-      </main>
-    </BrowserRouter>
-    
+    <Router>
+      <div className="app-container">
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

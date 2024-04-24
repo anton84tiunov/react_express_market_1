@@ -1,0 +1,92 @@
+
+###
+POST http://localhost:5000/user/create HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "3333",
+    "lastName": "3333",
+    "age": 33,
+    "email": "333@333",
+    "password": "33333333"
+}
+
+
+###
+
+POST http://localhost:3000/product_cat/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "product_cat 4",
+    "description": "description product_cat 4",
+    "user_id": 4
+}
+
+###
+
+POST http://localhost:3000/product/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "product_cat  5",
+    "category_id": 5,
+    "user_id": 4,
+    "price": 444,
+    "description": "description product_cat 4",
+    "created_at": "2013-10-21T13:28:06.419Z"
+}
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,6 +8,6 @@ export class ProductCategoryService {
     }
 
     getAllProductCategories = async (): Promise<ProductCategory[]> => {
-        return await ProductCategoryRepository.find();
+        return await ProductCategoryRepository.find({ relations: ['user_created'] });
     }
 }

@@ -8,7 +8,7 @@ export const createProductCategory = async (req: Request, res: Response): Promis
     try {
         const newProductCategoryData: ProductCategory = req.body;
         // Установка user_id из запроса
-        newProductCategoryData.userr_created = req.body.user_id;
+        newProductCategoryData.user_created = req.body.user_id;
         const newProductCategory = await productCategoryService.createProductCategory(newProductCategoryData);
         res.status(201).json(newProductCategory);
     } catch (error) {
@@ -20,6 +20,7 @@ export const createProductCategory = async (req: Request, res: Response): Promis
 export const  getAllProductCategories =  async (req: Request, res: Response): Promise<void> => {
     try {
         const productCategories = await productCategoryService.getAllProductCategories();
+        console.log(productCategories);
         res.json(productCategories);
     } catch (error) {
         console.error('Ошибка при получении категорий продуктов:', error);

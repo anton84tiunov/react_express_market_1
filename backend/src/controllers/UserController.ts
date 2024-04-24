@@ -24,4 +24,16 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
     }
 };
 
+export const checkCredentials = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { email, password } = req.body;
+        // Проверяем существование пользователя и соответствие пароля
+        const isValidCredentials = await userService.checkCredentials(email, password);
+        res.json({ isValidCredentials });
+    } catch (error) {
+        console.error('Ошибка при проверке учетных данных:', error);
+        res.status(500).json({ error: 'Ошибка при проверке учетных данных' });
+    }
+};
+
 

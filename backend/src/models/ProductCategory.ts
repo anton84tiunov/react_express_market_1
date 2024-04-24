@@ -17,9 +17,9 @@ export class ProductCategory {
 
     @ManyToOne(() => User, (user)  => user.product_cat)
     @JoinColumn({ name: "user_id" }) // Имя столбца, в который будет сохранен внешний ключ
-    userr_created: User;
+    user_created: User;
 
-    @OneToMany(() => Product, (product) => product.userr_created)
+    @OneToMany(() => Product, (product) => product.user_created)
     product: Product[]
 
 }

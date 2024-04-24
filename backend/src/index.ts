@@ -25,9 +25,9 @@ async function startServer() {
           });
           
         // Использование маршрутов
-        app.use("/users", UserRoutes);
-        app.use("/products", ProductRoutes);
-        app.use("/product_cats", ProductCategoryRoutes);
+        app.use("/user", UserRoutes);
+        app.use("/product", ProductRoutes);
+        app.use("/product_cat", ProductCategoryRoutes);
 
         const port = 5000;
         app.listen(port, () => {

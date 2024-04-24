@@ -8,7 +8,7 @@ export const createProduct = async (req: Request, res: Response): Promise<void> 
     try {
         const newProductData: Product = req.body;
         // Установка user_id и category_id из запроса
-        newProductData.userr_created = req.body.user_id;
+        newProductData.user_created = req.body.user_id;
         newProductData.category = req.body.category_id;
         const newProduct = await productService.createProduct(newProductData);
         res.status(201).json(newProduct);
@@ -21,6 +21,7 @@ export const createProduct = async (req: Request, res: Response): Promise<void> 
 export const  getAllProducts =  async (req: Request, res: Response): Promise<void> => {
     try {
         const products = await productService.getAllProducts();
+        console.log(products);
         res.json(products);
     } catch (error) {
         console.error('Ошибка при получении продуктов:', error);

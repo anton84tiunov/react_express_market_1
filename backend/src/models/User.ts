@@ -23,10 +23,10 @@ export class User {
     @Column()
     password: string
 
-    @OneToMany(() => ProductCategory, (product_cat) => product_cat.userr_created)
+    @OneToMany(() => ProductCategory, (product_cat) => product_cat.user_created)
     product_cat: ProductCategory[]
 
-    @OneToMany(() => Product, (product) => product.userr_created)
+    @OneToMany(() => Product, (product) => product.user_created)
     product: Product[]
 
 }
