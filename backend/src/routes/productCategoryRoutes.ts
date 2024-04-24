@@ -4,10 +4,10 @@ import { createProductCategory, getAllProductCategories } from '../controllers/P
 const router = express.Router();
 
 // Маршрут для создания новой категории продукта
-router.post('/product_cat', createProductCategory);
+router.post('/create', createProductCategory);
 
 // Маршрут для получения всех категорий продуктов
-router.get('/product_cat', getAllProductCategories);
+router.post('/get_all', getAllProductCategories);
 
 export default router;
 

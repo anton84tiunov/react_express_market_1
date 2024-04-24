@@ -4,9 +4,9 @@ import { createProduct, getAllProducts} from '../controllers/ProductController'
 const router = express.Router();
 
 // Маршрут для создания нового продукта
-router.post('/products', createProduct);
+router.post('/create', createProduct);
 
 // Маршрут для получения всех продуктов
-router.get('/products', getAllProducts);
+router.post('/get_all', getAllProducts);
 
 export default router;

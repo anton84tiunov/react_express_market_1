@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Импортируем  требуемые компоненты из react-router-dom
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+
+// Создаем папку pages в src , а в ней 2 компонента, импортируем их...
+import Home from "./pages/Home";
+import Auth from "./pages/Auth";
+import Products from "./pages/Products";
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+  
+    <BrowserRouter>
+      <header>
+        <nav>
+          <h1>Jobarouter</h1>
+          <NavLink to="/auth">About</NavLink>
+          <NavLink to="/home">Home</NavLink>
+          <NavLink to="/products">Products</NavLink>
+
+        </nav>
+       
       </header>
-    </div>
+      <main>
+        <Routes>
+            <Route path="auth" element={<Auth />} />
+            <Route path="home" element={<Home />} />
+            <Route path="products" element={<Products />} />
+    
+        </Routes>
+      </main>
+    </BrowserRouter>
+    
   );
 }
 

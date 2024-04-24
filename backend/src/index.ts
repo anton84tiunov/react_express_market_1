@@ -12,15 +12,24 @@ async function startServer() {
         console.log('Источник данных успешно инициализирован');
 
         const app = express();
+
+       
+
         app.use(express.json());
         console.log('app.use(express.json());');
 
+        app.use((req, res, next) => {
+            res.header('Access-Control-Allow-Origin', '*'); // Замените * на домен вашего приложения React в продакшн среде
+            res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+            next();
+          });
+          
         // Использование маршрутов
-        app.use(UserRoutes);
-        app.use(ProductRoutes);
-        app.use(ProductCategoryRoutes);
+        app.use("/users", UserRoutes);
+        app.use("/products", ProductRoutes);
+        app.use("/product_cats", ProductCategoryRoutes);
 
-        const port = 3000;
+        const port = 5000;
         app.listen(port, () => {
             console.log(`Сервер запущен на порту ${port}`);
         });

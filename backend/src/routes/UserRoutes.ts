@@ -5,10 +5,10 @@ const router = express.Router();
 
 
 // Маршрут для создания нового пользователя
-router.post('/users', createUser);
+router.post('/create', createUser);
 
 // Маршрут для получения всех пользователей
-    router.get('/users', getAllUsers);
+    router.post('/get_all', getAllUsers);
 
 
 export default router;
